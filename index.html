@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экономический Аналитик | Личная визитка</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --bg: #fdfdfd;
+            --text-main: #121212;
+            --text-muted: #5a5a5a;
+            --accent: #1a3a5a;
+            --light-border: #ececec;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 30px; }
+
+        /* Мягкое появление при скролле */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(15px);
+            animation: appear 1s forwards;
+        }
+
+        @keyframes appear {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header & Hero */
+        header { padding: 40px 0; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 600; font-size: 18px; letter-spacing: -0.5px; }
+        
+        .hero { padding: 100px 0; border-bottom: 1px solid var(--light-border); }
+        h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 300; line-height: 1.1; margin-bottom: 30px; }
+        .hero-desc { font-size: 20px; color: var(--text-muted); max-width: 650px; margin-bottom: 40px; }
+
+        /* Sections Общее */
+        section { padding: 100px 0; border-bottom: 1px solid var(--light-border); }
+        .section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 50px; display: block; }
+        h2 { font-size: 28px; font-weight: 400; margin-bottom: 30px; }
+
+        /* О себе */
+        .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; }
+        .about-text p { margin-bottom: 20px; color: var(--text-muted); }
+
+        /* Услуги */
+        .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .service-card { padding: 30px; background: #fff; border: 1px solid var(--light-border); transition: 0.3s; }
+        .service-card:hover { border-color: var(--text-main); }
+        .service-card h3 { margin-bottom: 15px; font-size: 20px; font-weight: 500; }
+        .service-card p { font-size: 15px; color: var(--text-muted); }
+
+        /* Результаты/Кейсы */
+        .stats { display: flex; gap: 80px; margin-top: 40px; }
+        .stat-item span { display: block; font-size: 32px; font-weight: 500; }
+        .stat-item label { font-size: 14px; color: var(--text-muted); }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 30px; max-width: 800px; }
+        .faq-item h4 { font-weight: 500; margin-bottom: 10px; }
+        .faq-item p { color: var(--text-muted); font-size: 15px; }
+
+        /* Кнопка */
+        .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            background: var(--text-main);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        .btn:hover { background: #333; transform: translateY(-2px); }
+
+        footer { padding: 60px 0; color: var(--text-muted); font-size: 14px; display: flex; justify-content: space-between; }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 30px; }
+            .stats { flex-direction: column; gap: 30px; }
+            .hero { padding: 60px 0; }
+        }
+        html{scroll-behavior: smooth;}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="fade-in">
+            <div class="logo">EKO.VISION</div>
+            <div style="font-size: 14px; color: var(--text-muted);">Независимая аналитика</div>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero fade-in" style="animation-delay: 0.2s;">
+            <h1>Ваши решения должны основываться на данных, а не на интуиции.</h1>
+            <p class="hero-desc">Я помогаю бизнесу и частным лицам находить логику в хаосе рыночных цифр, минимизировать риски и строить устойчивые финансовые модели.</p>
+            <a href="#contact" class="btn">Связаться со мной</a>
+        </section>
+
+        <!-- О себе -->
+        <section class="fade-in">
+            <span class="section-label">01. Обо мне</span>
+            <div class="about-grid">
+                <h2>Интеллектуальный подход к активам</h2>
+                <div class="about-text">
+                    <p>Меня зовут друн. Более 8 лет я занимаюсь глубоким анализом макроэкономических трендов и консультированием в области управления капиталом. Моя задача — перевести язык сухих цифр на язык конкретных действий.</p>
+                    <p>Я не предлагаю «волшебных таблеток». Моя работа — это методология, основанная на математическом ожидании, понимании циклов и критическом мышлении. Я верю, что в экономике побеждает тот, кто умеет ждать и анализировать.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Услуги -->
+        <section class="fade-in">
+            <span class="section-label">02. Экспертиза</span>
+            <div class="services-list">
+                <div class="service-card">
+                    <h3>Аудит бизнес-моделей</h3>
+                    <p>Проверка вашей текущей финансовой структуры на «прочность». Ищу скрытые дыры, куда уходит прибыль, и предлагаю пути оптимизации налоговой и операционной нагрузки.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Рыночные прогнозы</h3>
+                    <p>Еженедельные или ежемесячные отчеты по интересующим секторам экономики. Только факты, анализ спроса/предложения и влияние геополитики на ваш сектор.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Инвестиционная стратегия</h3>
+                    <p>Разработка персонального плана распределения активов. Мы не «играем на бирже», мы строим портфель, который защитит ваш капитал от инфляции и потрясений.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Результаты -->
+        <section class="fade-in">
+            <span class="section-label">03. Результаты в цифрах</span>
+            <h2>За прошлый год совместной работы с клиентами:</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <span>14%</span>
+                    <label>Средняя экономия издержек</label>
+                </div>
+                <div class="stat-item">
+                    <span>22+</span>
+                    <label>Глубоких отчетов подготовлено</label>
+                </div>
+                <div class="stat-item">
+                    <span>9/10</span>
+                    <label>Клиентов работают на постоянной основе</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="fade-in">
+            <span class="section-label">04. Частые вопросы</span>
+            <div class="faq-item">
+                <h4>Для кого полезны ваши услуги?</h4>
+                <p>В основном это владельцы малого и среднего бизнеса, которым нужен взгляд со стороны, или частные инвесторы, желающие структурировать свои накопления.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Как проходит первая консультация?</h4>
+                <p>Мы созваниваемся на 30-40 минут. Вы описываете текущую ситуацию и запрос, я задаю уточняющие вопросы и в конце предлагаю варианты решения или формат сотрудничества.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Гарантируете ли вы доходность?</h4>
+                <p>В экономике никто не может гарантировать доходность. Я гарантирую профессиональный подход, минимизацию рисков и прозрачность методологии анализа.</p>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section id="contact" class="fade-in" style="border-bottom: none;">
+            <span class="section-label">05. Контакт</span>
+            <h2>Готовы начать диалог?</h2>
+            <p style="margin-bottom: 30px; color: var(--text-muted);">Напишите мне в Telegram или на почту, чтобы договориться о вводной встрече.</p>
+            <a href="mailto:work@example.com" class="btn">Написать на почту</a>
+            <p style="margin-top: 20px; font-size: 14px;">Telegram: @vistezi_popa</p>
+        </section>
+
+        <footer>
+            <div>2024 Economics Vision</div>
+            <div>Сделано с акцентом на смысл</div>
+        </footer>
+    </div>
+
+</body>
+</html>
